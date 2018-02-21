@@ -18,6 +18,7 @@ endif
 
 " use colorscheme elflord
 colorscheme elflord
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " cursorline highlight, stop highlight during insert mode
 set cursorline
@@ -31,6 +32,11 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set autoindent
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Show tabs and trails with symbols
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " swith cursor from block in insert mode
@@ -47,10 +53,10 @@ end
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Mapping
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
-:nnoremap <C-X> :bdelete<CR>
-nmap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <C-X> :bdelete<CR>
+nmap <Leader>m :CtrlPMixed<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Specify a directory for plugins
@@ -82,7 +88,7 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(class|exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
