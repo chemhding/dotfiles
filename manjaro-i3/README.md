@@ -37,3 +37,44 @@ menuentry "System restart" {
 ```
 
 To edit other entries, one easy way is to modify the file `grub.cfg`, but it will be overwritten once it is regenerated. The other choice is to modify scripts in `/etc/grub.d/`.
+
+oh-my-zsh
+---------
+
+### Theme
+Current theme in setting is [spaceship](https://github.com/denysdovhan/spaceship-prompt). To work correctly, better use [nerd-fonts](https://github.com/ryanoasis/nerd-fonts). Right now I am using `DejaVuSansMono Nerd Font Mono`.
+
+To set up theme, clone the repo into `$ZSH-CUSTOM/theme`(by default `~/.oh-my-zsh/custom/theme):
+
+```
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+```
+
+Symlink `spaceship.zsh-theme` to your oh-my-zsh custom themes directory:
+
+```
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+```
+
+Set `ZSH_THEME="spaceship"` in your `.zshrc`.
+
+### Plugin
+#### fast-syntax-highlighting
+Clone [`fast-syntax-highlighting`](https://github.com/zdharma/fast-syntax-highlighting) repository into `$ZSH-CUSTOM/plugins`(by default `~/.oh-my-zsh/custom/plugins):
+
+
+```
+git clone https://github.com/zdharma/fast-syntax-highlighting.git \
+  ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+```
+
+Then add `fast-syntax-highlighting` to `plugins` list.
+
+#### zsh-autosuggestions
+Clone [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions) repository into `$ZSH-CUSTOM/plugins`(by default `~/.oh-my-zsh/custom/plugins):
+
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+Then add `zsh-autosuggestions` to `plugins` list.
