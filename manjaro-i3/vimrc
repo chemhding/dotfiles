@@ -31,7 +31,7 @@ endfunction
 " syntax enable
 " set background=dark
 set number
-set conceallevel=2
+set conceallevel=3
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " cursorline highlight, stop highlight during insert mode
@@ -57,6 +57,11 @@ set list
 highlight ColorColumn ctermbg=magenta
 " set colorcolumn=81 " coloring whole 81st column
 call matchadd('ColorColumn', '\%81v', 100) " coloring text that reaches 81st only
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set the number of context lines above and below the cursor
+" large value causes cursor to stay in the middle when possible
+set scrolloff=999
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " prank :)
@@ -95,6 +100,8 @@ nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <C-X> :bdelete<CR>
 nmap <Leader>m :CtrlPMixed<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
+imap jj <Esc>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " vim-plug automatic installation
@@ -117,6 +124,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -140,3 +150,20 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Nerdtree setting
+" When closing the last window, close together with nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Close nerdtree once file is opened from nerdtree
+let NERDTreeQuitOnOpen = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vim-devicons setting
+" show folder symbol
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vim-nerdtree-syntax-highlight setting
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
