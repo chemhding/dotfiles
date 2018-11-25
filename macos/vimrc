@@ -88,12 +88,13 @@ imap jj <Esc>
 " spell check on .tex files
 autocmd FileType tex setlocal spell
 " move cursor to next <++>
-autocmd FileType tex inoremap ;n <Esc>/<++><Enter>"0c4l
-autocmd FileType tex vnoremap ;n <Esc>/<++><Enter>"0c4l
-autocmd FileType tex nnoremap ;n <Esc>/<++><Enter>"0c4l
+autocmd FileType tex inoremap ;n <Esc>/<++><Enter>0c4l
+autocmd FileType tex vnoremap ;n <Esc>/<++><Enter>0c4l
+autocmd FileType tex nnoremap ;n <Esc>/<++><Enter>0c4l
 " key mapping in .tex files
 autocmd FileType tex inoremap ;enu \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd FileType tex inoremap ;ite \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
+autocmd FileType tex inoremap ;dfr \dfrac{}{<++>}<Esc>ba
 
 
 " ================================ plugins ================================
