@@ -22,5 +22,8 @@ cd ~/.vim/plugged/YouCompleteMe/
 ./install.py
 ```
 
+### [vimtex](https://github.com/lervag/vimtex)
+`vimtex` is an amazing plugin for LaTex. Install `latexmk` package since I use `basictex`: `sudo tlmgr install latexmk`
+
 ### [UltiSnips](https://github.com/SirVer/ultisnips)
 Remains to be done.
