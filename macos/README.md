@@ -23,7 +23,7 @@ cd ~/.vim/plugged/YouCompleteMe/
 ```
 
 ### [vimtex](https://github.com/lervag/vimtex)
-`vimtex` is an amazing plugin for LaTex. Install `latexmk` package since I use `basictex`: `sudo tlmgr install latexmk`
+`vimtex` is an amazing plugin for LaTex. Install `latexmk` package if you use `basictex`: `sudo tlmgr install latexmk`
 
 ### [UltiSnips](https://github.com/SirVer/ultisnips)
 Remains to be done.
