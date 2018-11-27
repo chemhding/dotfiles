@@ -100,6 +100,10 @@ call matchadd('ColorColumn', '\%81v', 100) " coloring text that reaches 81st onl
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 
+" set spell check for .md files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+
 " Mapping
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -113,9 +117,9 @@ imap jj <Esc>
 " spell check on .tex files
 autocmd FileType tex setlocal spell
 " move cursor to next <++>
-autocmd FileType tex inoremap ;n <Esc>/<++><Enter>_c4l
-autocmd FileType tex vnoremap ;n <Esc>/<++><Enter>_c4l
-autocmd FileType tex nnoremap ;n <Esc>/<++><Enter>_c4l
+autocmd FileType tex inoremap ;n <Esc>/<++><Enter>"_c4l
+autocmd FileType tex vnoremap ;n <Esc>/<++><Enter>"_c4l
+autocmd FileType tex nnoremap ;n <Esc>/<++><Enter>"_c4l
 " key mapping in .tex files
 autocmd FileType tex inoremap ;enu \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd FileType tex inoremap ;ite \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
@@ -123,7 +127,6 @@ autocmd FileType tex inoremap ;dfr \dfrac{}{<++>}<Esc>ba
 
 
 " ================================ plugins ================================
-
 " vim-plug automatic installation
 " codes before plug#begin() call
 if empty(glob('~/.vim/autoload/plug.vim'))
