@@ -78,3 +78,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 
 Then add `zsh-autosuggestions` to `plugins` list.
+
+Conky
+-----
+Conky is a system monitor for X. Manjaro-i3 runs a script to run conky when `i3` starts. The script is usually begined with `start_conky_xxx` and is located in `/usr/bin/`. The script mainly starts two conky programs with two different config file, which are loacted in `/usr/share/conky/`. Modify those files to make changes on information shown by conky.
