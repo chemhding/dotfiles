@@ -30,6 +30,7 @@ endfunction
 
 " syntax enable
 " set background=dark
+" set relativenumber
 set number
 set conceallevel=3
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -127,6 +128,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'Valloric/YouCompleteMe'
+Plug 'lervag/vimtex'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
