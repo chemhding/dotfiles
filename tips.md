@@ -68,16 +68,3 @@ That lists all matched files. Use `-delete` to delete. Use `-type f` to limit on
 
 `find . -depth 1 -type f -not -name "*.pdf" -not -name "*.tex" -delete`
 
-basictex
----
-Use `tlmgr` to install packages: `sudo tlmgl install <name>`.
-
-To show installed packages: `tlmgl list --only-installed`.
-
-To show all packages: `tlmgl list`.
-
-HomeBrew
----
-`Brew cask` is an extension of `Homebrew`.
-
-Show package info: `Brew info` or `Brew cask info`.
