@@ -12,6 +12,14 @@ To show installed packages: `tlmgl list --only-installed`.
 
 To show all packages: `tlmgl list`.
 
+## java
+
+### Installation
+
+```sh
+brew cask install java
+```
+
 ## python
 
 ### Installation
@@ -39,7 +47,11 @@ Python is not installed as a framework. The Mac OS X backend will not be able to
 
 Solution found [here](https://stackoverflow.com/a/21789908).
 
-Create file `~/.matplotlib/matplotlibrc` and add line `backend:TkAgg`
+Create file `~/.matplotlib/matplotlibrc` and add line ~~`backend:TkAgg`~~
+
+**Note**
+
+It seems there's some issue with `TkAgg` backend, a blank window pops without any graph on it when calling `matplotlib.pyplot.plot()` function. Problem seems to be related with Apple's `tcl/tk`. Couldn't figure out a solution. So change backend to `backend: Qt5Agg`. `pip install PyQt5` prior to using `Qt5Agg`.
 
 #### Jupyter notebook in virtualenv
 
@@ -66,3 +78,30 @@ or
 ```sh
 ipython kernel isntall --user --name=virtualenv-name
 ```
+
+## vim
+
+### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+Download with [`vim-plug`](https://github.com/junegunn/vim-plug) and compile. Remember to recompile after updating with vim-plug.
+
+Recommend to use latest macvim, but I use the vim that comes with macos. If you want C-family completion, you __MUST__ have the latest `xcode` installed along with the latest Command Line Tools(They are are installed automatically when you run `clang` for the first time.or manually by running `xcode-select --install`).
+
+Install `cmake`: ` brew install cmake `
+
+Compile with semantic support for C-family languages:
+```sh
+$ cd ~/.vim/plugged/YouCompleteMe/
+$ ./install.py --clang-completer
+```
+
+Compile without semantic support for C-family languages:
+```sh
+$ cd ~/.vim/plugged/YouCompleteMe/
+$ ./install.py
+```
+
+### [vimtex](https://github.com/lervag/vimtex)
+`vimtex` is an amazing plugin for LaTex. Install `latexmk` package if you use `basictex`: `sudo tlmgr install latexmk`
+
+### [UltiSnips](https://github.com/SirVer/ultisnips)
+Remains to be done.
