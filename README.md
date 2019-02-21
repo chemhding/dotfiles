@@ -1,6 +1,6 @@
 Description
 ---
-This is a back up place of my dot files, including some handy tips of shell commands, apps and some solutions to all kinds of issues.
+This is a back up place of my dot files, including some handy tips of shell commands, apps and solutions to issues that I came across during study.
 
 Notes
 ---
