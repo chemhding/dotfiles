@@ -68,3 +68,7 @@ That lists all matched files. Use `-delete` to delete. Use `-type f` to limit on
 
 `find . -depth 1 -type f -not -name "*.pdf" -not -name "*.tex" -delete`
 
+### Downloading consecutive numbered files
+```
+wget http://xxx/xxx/lec{0..10}.pdf
+```
