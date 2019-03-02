@@ -7,3 +7,9 @@ Notes
 A few works remains to be done:
 * Combine same dot files
 * Add more detailed descriptions and instructions
+
+Contents
+---
+1. [Guides](guide.md)
+   * [HomeBrew](guides.md#HomeBrew)
+2. [Tips](tips.md)

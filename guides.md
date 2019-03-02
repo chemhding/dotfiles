@@ -4,7 +4,7 @@
 
 Show package info: `Brew info` or `Brew cask info`.
 
-## basictex
+## Basictex
 
 Use `tlmgr` to install packages: `sudo tlmgl install <name>`.
 
@@ -12,7 +12,7 @@ To show installed packages: `tlmgl list --only-installed`.
 
 To show all packages: `tlmgl list`.
 
-## java
+## Java
 
 ### Installation
 
@@ -20,7 +20,7 @@ To show all packages: `tlmgl list`.
 brew cask install java
 ```
 
-## python
+## Python
 
 ### Installation
 
@@ -102,7 +102,7 @@ Last, recreate virtualenv
 $HOME/.virtualeves $ virtualenv py3env
 ```
 
-## vim
+## Vim
 
 ### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 Download with [`vim-plug`](https://github.com/junegunn/vim-plug) and compile. Remember to recompile after updating with vim-plug.
