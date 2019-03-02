@@ -128,3 +128,10 @@ $ ./install.py
 
 ### [UltiSnips](https://github.com/SirVer/ultisnips)
 Remains to be done.
+
+## [Xv6](https://pdos.csail.mit.edu/6.828/2018/xv6.html)
+
+Reference book and source code booklet can be found on the webpage Xv6 sources and text section.
+
+### [Tools install](https://pdos.csail.mit.edu/6.828/2018/tools.html)
+### [Tools guide](https://pdos.csail.mit.edu/6.828/2018/labguide.html)
