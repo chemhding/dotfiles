@@ -39,6 +39,10 @@ Install virtualenv and virtualenvwrapper
 Try anaconda.
 
 ### Issues
+- [Matplotlib in virtualenv on MacOS ](#Matplotlib in virtualenv on MacOS)
+- [Jupyter notebook in virtualenv](#Jupyter notebook in virtualenv)
+- [Issue with virturalenv after brew upgrade python](#Issue with virturalenv after brew upgrade python)
+- [Install graphviz on Windows](#Install graphviz on Windows)
 
 #### Matplotlib in virtualenv on MacOS
 
