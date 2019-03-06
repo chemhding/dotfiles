@@ -102,6 +102,12 @@ Last, recreate virtualenv
 $HOME/.virtualeves $ virtualenv py3env
 ```
 
+#### Install graphviz on Windows
+```bash
+conda install python-graphviz
+```
+[Reference](https://github.com/ContinuumIO/anaconda-issues/issues/1666#issuecomment-301895525)
+
 ## Vim
 
 ### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
