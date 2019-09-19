@@ -10,6 +10,8 @@ if &term=="xterm"
      set t_Sf=^[[3%dm
 endif
 
+" set font for macvim gui
+set guifont=Hack\ Nerd\ Font:h14
 
 " set highlight color of matched search
 hi Search ctermbg=DarkBlue
@@ -18,7 +20,6 @@ hi Search ctermfg=Black
 
 " set highlight color of matched parentheses
 hi MatchParen cterm=bold ctermbg=DarkGreen ctermfg=Magenta
-
 
 " highlight matches when jumping to next
 nnoremap <silent> n   n:call HLNext(0.4)<cr>
@@ -41,6 +42,10 @@ endfunction
 set number
 set conceallevel=3
 set encoding=UTF-8
+" enable mouse in all mode
+" basically allow scrolling
+" especially in tmux
+set mouse=a
 
 
 " Indentation without hard tabs
@@ -55,6 +60,8 @@ set backspace=indent,eol,start  " more powerful backspacing
 " large value causes cursor to stay in the middle when possible
 set scrolloff=999
 
+" set autocompletation like IDE
+" set completeopt=longest,menu
 
 " use colorscheme elflord
 colorscheme elflord
@@ -86,7 +93,7 @@ set list
 
 
 " Make the 81st column stand out
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=Magenta
 " set colorcolumn=81 " coloring whole 81st column
 call matchadd('ColorColumn', '\%81v', 100) " coloring text that reaches 81st only
 
@@ -143,6 +150,7 @@ endif
 " Auto executes filetype plugin indent on, syntax enable
 " Revert settings after the call
 call plug#begin('~/.vim/plugged')
+Plug 'dracula/vim',{'as':'dracula'}
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -192,3 +200,19 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
+" YouCompleteMe setting
+" Toggle YCM for only following types of files.
+let g:ycm_filetype_whitelist = {
+  \ "c":1,
+  \ "cpp":1,
+  \ "python":1,
+  \ "sh":1,
+  \ "java":1,
+  \ }
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" add new trigger for semantic completer
+" reference from https://zhuanlan.zhihu.com/p/33046090
+let g:ycm_semantic_triggers =  {
+  \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+  \ 'cs,lua,javascript': ['re!\w{2}'],
+  \ }
