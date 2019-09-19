@@ -117,7 +117,7 @@ conda install python-graphviz
 ### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 Download with [`vim-plug`](https://github.com/junegunn/vim-plug) and compile. Remember to recompile after updating with vim-plug.
 
-Recommend to use latest macvim, but I use the vim that comes with macos. If you want C-family completion, you __MUST__ have the latest `xcode` installed along with the latest Command Line Tools(They are are installed automatically when you run `clang` for the first time.or manually by running `xcode-select --install`).
+Recommend to use latest macvim, ~~but I use the vim that comes with macos~~ (now I'm using macvim). If you want C-family completion, you __MUST__ have the latest `xcode` installed along with the latest Command Line Tools(They are are installed automatically when you run `clang` for the first time.or manually by running `xcode-select --install`).
 
 Install `cmake`: ` brew install cmake `
 
@@ -131,6 +131,22 @@ Compile without semantic support for C-family languages:
 ```sh
 $ cd ~/.vim/plugged/YouCompleteMe/
 $ ./install.py
+```
+
+After installation, `.ycm_extra_conf.py` file need to be configured in order to let semantic completer work. I'm using the default but it seems to have issues with my macos. I believe more details need to be added to it. Set global config file:
+
+`let g:ycm_global_ycm_extra_conf` = \'~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py\'
+
+When editing c files, semantic completer is default triggered by `. or >-`. For example, if you type `pri` first time, only character completer takes control and it won't help you complete `print` because it doesn't exist in the buffer yet. In addition, YCM has a short cut **CTRL + SPACE** to trigger semantic completer when needed. But **CTRL + SPACE** is held by input method switch system wide.
+
+Thus you can either set short cut to other key pair: `let g:ycm_key_invoke_completion` = \'\<Leader\>z\'
+
+or, add regex to update trigger requirements:
+```
+let g:ycm_semantic_triggers =  {
+  \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+  \ 'cs,lua,javascript': ['re!\w{2}'],
+  \ }
 ```
 
 ### [vimtex](https://github.com/lervag/vimtex)
