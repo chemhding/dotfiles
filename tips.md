@@ -1,3 +1,24 @@
+MacOS
+---
+
+### Repeating keys
+
+When typing in some applications, pressing and holding a key for example ```a``` gives you ```à á â ä æ ã å ā```. That is 
+because the repeating key is enabled. To disable repeating keys in system-wide, you can type:
+
+```
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
+In addition, it can be disabled for certain application. For example, disable repeating keys for pycharm, which is very 
+helpful when using plugin ```IdeaVim```.
+
+```
+defaults write com.jetbrains.pycharm ApplePressAndHoldEnabled -bool flase
+```
+
+Referred from [here](https://gist.github.com/lsd/1e1826907ab7e49c536a).
+
 linux shell (some may only apply in zsh)
 ---
 
