@@ -14,7 +14,11 @@ In addition, it can be disabled for certain application. For example, disable re
 helpful when using plugin ```IdeaVim```.
 
 ```
-defaults write com.jetbrains.pycharm ApplePressAndHoldEnabled -bool flase
+defaults write com.jetbrains.pycharm ApplePressAndHoldEnabled -bool false
+```
+For CLion:
+```
+defaults write com.jetbrains.clion ApplePressAndHoldEnable -bool false
 ```
 
 Referred from [here](https://gist.github.com/lsd/1e1826907ab7e49c536a).
