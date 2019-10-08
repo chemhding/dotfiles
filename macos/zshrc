@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/xxx/.oh-my-zsh
+export ZSH=/Users/username/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # DEFAULT_USER='xxx'
 
 # Add MySQL to PATH
-export PATH=$PATH:/usr/local/mysql/bin
+# export PATH=$PATH:/usr/local/mysql/bin
 
 # Hashtable
 hash -d doc=~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents
@@ -109,9 +109,23 @@ hash -d doc=~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents
 #     prompt_segment blue black $PRIMARY_FG '%20<...<%~%<<'
 # }
 
-# Virtual Environment Wrapper
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
-source /usr/local/bin/virtualenvwrapper.sh
+# Virtual Environment and Wrapper
+export PATH=$PATH:$HOME/Library/Python/3.7/bin
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+source $HOME/Library/Python/3.7/bin/virtualenvwrapper.sh
+
+# Add binutils into PATH
+export PATH="$PATH:/usr/local/opt/binutils/bin"
+# For compilers to find binutils
+export LDFLAGS="-L/usr/local/opt/binutils/lib"
+export CPPFLAGS="-I/usr/local/opt/binutils/include"
+
 
 # Add neofetch to launtch
-neofetch
+# neofetch
+
+# Homebrew's sbin was not found in your PATH but you have installed 
+# formulae that but executables in /usr/local/sbin.
+# Consider setting the PATH for example like so:
+export PATH="/usr/local/sbin:$PATH"
