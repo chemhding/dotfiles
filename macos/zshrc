@@ -95,6 +95,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# open macvim in terminal with alias vim
+# In case macvim malfunction due to ruby loading 
+# failure after system upgrade, such as Mojave to Catalina,
+# comment this alias and use system provide vim
+alias vim="mvim -v"
+
 # Hide user@hostname
 # DEFAULT_USER='xxx'
 

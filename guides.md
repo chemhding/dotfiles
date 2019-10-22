@@ -112,12 +112,21 @@ conda install python-graphviz
 ```
 [Reference](https://github.com/ContinuumIO/anaconda-issues/issues/1666#issuecomment-301895525)
 
-## Vim
+## MacVim
+
+### Installation
+
+```
+brew install macvim
+```
+
+put ```alias vim="mvim -v"``` in ```.bashrc``` file. Comment this line and temporarily use system provide Vim if macvim doesn't work after system upgrade. E.g., Mojave to Catalina macvim ruby liabrary loading issue.
+
 
 ### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 Download with [`vim-plug`](https://github.com/junegunn/vim-plug) and compile. Remember to recompile after updating with vim-plug.
 
-Recommend to use latest macvim, ~~but I use the vim that comes with macos~~ (now I'm using macvim). If you want C-family completion, you __MUST__ have the latest `xcode` installed along with the latest Command Line Tools(They are are installed automatically when you run `clang` for the first time.or manually by running `xcode-select --install`).
+~~Recommend to use latest macvim, but I use the vim that comes with macos.~~ Macvim is **requried**, turns out YCM won't work with pre-installed vim from Apple since its Python support is broken. If you want C-family completion, you __MUST__ have the latest `xcode` installed along with the latest Command Line Tools(They are are installed automatically when you run `clang` for the first time.or manually by running `xcode-select --install`).
 
 Install `cmake`: ` brew install cmake `
 
