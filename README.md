@@ -15,6 +15,6 @@ Contents
    * [Basictex](guides.md#Basictex)
    * [Java](guides.md#Java)
    * [Python](guides.md#Python)
-   * [Vim](guides.md#Vim)
+   * [MacVim](guides.md#MacVim)
    * [Xv6](guides.md#Xv6)
 2. [Tips](tips.md)
