@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # open macvim in terminal with alias vim
@@ -115,23 +115,39 @@ hash -d doc=~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents
 #     prompt_segment blue black $PRIMARY_FG '%20<...<%~%<<'
 # }
 
-# Virtual Environment and Wrapper
-export PATH=$PATH:$HOME/Library/Python/3.7/bin
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-source $HOME/Library/Python/3.7/bin/virtualenvwrapper.sh
-
 # Add binutils into PATH
 export PATH="$PATH:/usr/local/opt/binutils/bin"
 # For compilers to find binutils
 export LDFLAGS="-L/usr/local/opt/binutils/lib"
 export CPPFLAGS="-I/usr/local/opt/binutils/include"
 
+# --------------------PYTHON--------------------
+# export PATH="/usr/local/opt/python@3.9/bin:$PATH"
+# For compilers to find python@3.8 you may need to set:
+# export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
+# Virtual Environment and Wrapper variables
+export WORKON_HOME=$HOME/.virtualenvs
+# Override python interpreter in $PATH search
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+# python path must be set before this
+source /usr/local/bin/virtualenvwrapper.sh
 
-# Add neofetch to launtch
-# neofetch
+# -------------------JAVA-------------------
+# For the system Java wrappers to find this JDK, symlink it with
+# sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+# If you need to have openjdk first in your PATH:
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+# For compilers to find openjdk you may need to set:
+# export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
+# --------------------HOMEBREW--------------------
 # Homebrew's sbin was not found in your PATH but you have installed 
 # formulae that but executables in /usr/local/sbin.
 # Consider setting the PATH for example like so:
 export PATH="/usr/local/sbin:$PATH"
+
+# --------------------LAUNCH--------------------
+# Add neofetch to launtch
+# neofetch
+
