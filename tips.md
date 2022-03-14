@@ -28,7 +28,7 @@ defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
 
 For VSCode:
 ```
-defaults write com.microsoft.vscode ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 Referred from [here](https://gist.github.com/lsd/1e1826907ab7e49c536a).
